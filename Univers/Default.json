@@ -1,20 +1,55 @@
 [
     [
-        {"id":"bonjour", "traduction":[
-            {"lang":"FR", "text":"bonjour"},
-            {"lang":"EN", "text":"hello"}
-        ]},
-        {"id":"amie", "traduction":[
-            {"lang":"FR", "text":["ami", "amie"]},
-            {"lang":"EN", "text":"firend"}
-        ]},
-        {"id":"bonjour_monsieur", "traduction":[
-            {"lang":"FR", "text":"bonjour |prenom  |nom à"},
-            {"lang":"EN", "text":"hi |prenom |nom"}
-        ]},
-        {"id":"commantaire", "traduction": [
-            {"lang":"FR", "text":["|count commentaire", "|count commentaires"]},
-            {"lang":"EN", "text":["|count comment", "|count comments"]}
-        ]}
+        {
+            "lang": "FR",
+            "sentences": [
+                {
+                    "id": "bonjour",
+                    "text": "Bonjour"
+                },
+                {
+                    "id": "titi",
+                    "text": "titi"
+                },
+                {
+                    "id": "tati",
+                    "text": "titi"
+                }
+            ]
+        },
+        {
+            "lang": "EN",
+            "sentences": [
+                {
+                    "id": "bonjour",
+                    "text": "hello"
+                },
+                {
+                    "id": "titi",
+                    "text": "titi"
+                },
+                {
+                    "id": "tati",
+                    "text": "titi"
+                }
+            ]
+        },
+        {
+            "lang": "ES",
+            "sentences": [
+                {
+                    "id": "bonjour",
+                    "text": "Ola"
+                },
+                {
+                    "id": "titi",
+                    "text": "titi"
+                },
+                {
+                    "id": "tati",
+                    "text": "titi"
+                }
+            ]
+        }
     ]
 ]

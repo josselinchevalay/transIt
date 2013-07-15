@@ -79,11 +79,9 @@
          $univers = new Univers();
          foreach($objet as $key => $value){             
              foreach($value as $row => $sentence){
-                 $idSentence = $sentence->id;
-                 unset($sentence->id);
-                 $temp[$idSentence] = $sentence;                 
+                 $temp[$sentence->lang] = $sentence->sentences;           
              }
-         }
+         }         
          return $temp;
      }
  }

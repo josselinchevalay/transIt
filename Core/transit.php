@@ -148,21 +148,21 @@
         */
         public function getSentences($id, $lang, $univers=null){
             if(is_null($univers)){$univers = "Default";}
-
+            
             if(isset($this->_tabUnivers[$univers])){
-                if(isset($this->_tabUnivers[$univers][$id])){
-                    $tabTrad = $this->_tabUnivers[$univers][$id]->traduction;
-                    foreach($tabTrad as $key => $value){
-                        if($value->lang == $lang)
+               if(isset($this->_tabUnivers[$univers][$lang])){
+                   $tabLang = $this->_tabUnivers[$univers][$lang];
+                   foreach($tabLang as $key => $value){
+                       if($value->id == $id)
                             return $value->text;
-                    }
-                }else{
-                    throw new Exception ("L'id n'existe pas");
-                }
+                   }
+               }else{
+                   throw new Exception("La langue n'existe pas");
+               }
             }else{
                 throw new Exception ("L'univers n'existe pas");
             }
-            throw new Exception ("La langue est introuvable pour votre id");
+            throw new Exception("L'id n'existe pas");
         }
 
 
