@@ -1,0 +1,15 @@
+{
+	"name": "transit/TransIt",
+    "description": "nouveau petit framework MVC en php sans aucune prétention",
+    "keywords": ["php", "MVC", "poo"],
+    "homepage": "",
+    "type": "framwork",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josselin Chevalay",
+            "email": "josselin54.chevalay@gmail.com",
+            "homepage": "http://josselinchevalay.wordpress.com/"
+        }],    
+    "minimum-stability": "Dev"
+}

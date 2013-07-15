@@ -1,0 +1,20 @@
+[
+    [
+        {"id":"tigre", "traduction":[
+            {"lang":"FR", "text":"tigre"},
+            {"lang":"EN", "text":"tiger"}
+        ]},
+        {"id":"chien", "traduction":[
+            {"lang":"FR", "text":["chien", "chienne"]},
+            {"lang":"EN", "text":"dog"}
+        ]},
+        {"id":"bonjour_monsieur", "traduction":[
+            {"lang":"FR", "text":"bonjour |prenom  |nom"},
+            {"lang":"EN", "text":"hi |prenom |nom"}
+        ]},
+        {"id":"commantaire", "traduction": [
+            {"lang":"FR", "text":["|count commentaire", "|count commentaires"]},
+            {"lang":"EN", "text":["|count comment", "|count comments"]}
+        ]}
+    ]
+]
