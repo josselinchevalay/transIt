@@ -47,7 +47,7 @@
         * tableaux des univers 
         * @access private
         */
-        private $_tabUnivers;
+        private static  $_tabUnivers;
 
         /**
         * nom du repertoires ou ce trouve les données organiser en 
@@ -115,7 +115,7 @@
                 $fr = new FileReader();
                 $nameOfUnivers = substr($value, 0, -5);
                 $stream = $fr->getStreamFile($this->_dirName.$value);
-                $this->_tabUnivers[$nameOfUnivers] = Univers::convertToUnivers($jsonParser->deserialize($stream));                
+                TransIt::$_tabUnivers[$nameOfUnivers] = Univers::convertToUnivers($jsonParser->deserialize($stream));                
             }            
         }
 
@@ -164,9 +164,9 @@
 
 
             if(empty($tabLang)){
-               if(isset($this->_tabUnivers[$univers])){
-                   if(isset($this->_tabUnivers[$univers][$lang])){                 
-                        $tabLang = $this->_tabUnivers[$univers][$lang];
+               if(isset(TransIt::$_tabUnivers[$univers])){
+                   if(isset(TransIt::$_tabUnivers[$univers][$lang])){                 
+                        $tabLang = TransIt::$_tabUnivers[$univers][$lang];
                        foreach($tabLang as $key => $value){
                            if($value->id == $id)
                                 return $value->text;
