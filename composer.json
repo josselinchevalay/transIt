@@ -1,6 +1,6 @@
 {
 	"name": "transit/transit",
-    "description": "nouveau petit framework MVC en php sans aucune prétention",
+    "description": "Module permettant de traduire vos site en php",
     "keywords": ["php", "MVC", "poo"],
     "homepage": "",
     "type": "framwork",
