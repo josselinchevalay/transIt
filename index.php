@@ -11,6 +11,6 @@
     <body>
         <h1>Internalisationer vos sites</h1>
         <?php $t = TransIt::getInstance();?>
-        <p><?php echo $t->getSentences("titi", "EN", null);?></p>
+        <p><?php echo $t->getSentences("bonjour", "FR", "Animalerie");?></p>
     </body>
 </html>

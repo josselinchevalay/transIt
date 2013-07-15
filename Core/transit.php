@@ -34,7 +34,15 @@
     * @version 0.0.1
     */
     class TransIt{
+
+        private static $univers;
         
+        private static $lang;
+
+
+        private static $tabLang;
+
+
         /**
         * tableaux des univers 
         * @access private
@@ -148,21 +156,37 @@
         */
         public function getSentences($id, $lang, $univers=null){
             if(is_null($univers)){$univers = "Default";}
-            
-            if(isset($this->_tabUnivers[$univers])){
-               if(isset($this->_tabUnivers[$univers][$lang])){
-                   $tabLang = $this->_tabUnivers[$univers][$lang];
-                   foreach($tabLang as $key => $value){
-                       if($value->id == $id)
-                            return $value->text;
-                   }
-               }else{
-                   throw new Exception("La langue n'existe pas");
-               }
-            }else{
-                throw new Exception ("L'univers n'existe pas");
+            $tabLang = array();
+
+            if(TransIt::$lang == $lang && TransIt::$univers == $univers){
+                $tabLang = TransIt::$tabLang;
             }
-            throw new Exception("L'id n'existe pas");
+
+
+            if(empty($tabLang)){
+               if(isset($this->_tabUnivers[$univers])){
+                   if(isset($this->_tabUnivers[$univers][$lang])){                 
+                        $tabLang = $this->_tabUnivers[$univers][$lang];
+                       foreach($tabLang as $key => $value){
+                           if($value->id == $id)
+                                return $value->text;
+                       }
+                   }else{
+                       throw new Exception("La langue n'existe pas");
+                   }
+                }else{
+                    throw new Exception ("L'univers n'existe pas");
+                }
+                throw new Exception("L'id n'existe pas");
+            }else{
+                $tabLang = TransIt::$tabLang;
+                foreach($tabLang as $key => $value){
+                    if($value->id == $id)
+                        return $value->text;
+                }
+                throw new Exception("L'id n'existe pas");
+            }
+            
         }
 
 
