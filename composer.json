@@ -1,5 +1,5 @@
 {
-	"name": "transit/TransIt",
+	"name": "transit/transit",
     "description": "nouveau petit framework MVC en php sans aucune prétention",
     "keywords": ["php", "MVC", "poo"],
     "homepage": "",
