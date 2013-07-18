@@ -26,7 +26,10 @@
 
      private function __construct($lang, $univers=null){
          if(is_null($univers)){$univers = "Default";}
-         $path = str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME'])."Univers/".$univers."/".$lang.".json";        
+
+         $path = str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME'])."Univers/".$univers."/".$lang.".json"; 
+            
+                   
          if(file_exists($path)){
              TransIt::$_lang = $lang;
              TransIt::$_univers = $univers;
@@ -50,8 +53,8 @@
      }
 
 
-     public static function getInstance($lang, $univers= null){
-         if(is_null(TransIt::$_instance)){
+     public static function getInstance($lang, $univers= null, $doublon = true){
+         if(is_null(TransIt::$_instance)|| $doublon){
              TransIt::$_instance = new TransIt($lang, $univers);
              $instance = TransIt::$_instance;
          }else{
