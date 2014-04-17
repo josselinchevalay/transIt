@@ -1,6 +1,6 @@
 <?php
  class TransIt{
-     public static $_instance;
+     public static $_instance = array();
 
      public static $_tabLang;
 
@@ -53,14 +53,11 @@
      }
 
 
-     public static function getInstance($lang, $univers= null, $doublon = true){
-         if(is_null(TransIt::$_instance)|| $doublon){
-             TransIt::$_instance = new TransIt($lang, $univers);
-             $instance = TransIt::$_instance;
-         }else{
-             $instance = TransIt::$_instance;
-         }
-         return $instance;
+     public static function getInstance($lang, $univers= null){
+         if (! isset(TransIt::$_instance[$univers])) {
+            TransIt::$_instance[$univers] = new TransIt($lang, $univers);
+        }
+        return TransIt::$_instance[$univers];
      }
 
 
